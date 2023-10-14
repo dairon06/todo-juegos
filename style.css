@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --white: #fafafb;
+  --gray: #57575786;
+  --blue-light: #04d4c3;
+  --blue: #00aeff;
+  --green: #2c7b90;
+  --grisito: #5757571f;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./public/fondo\ 2.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: "Roboto", sans-serif;
+}
+
+/*container*/
+.container {
+  background-color: var(--white);
+  height: 30rem;
+  width: 27rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  margin: 25px;
+  padding: 15px;
+  justify-content: space-between;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.container::-webkit-scrollbar {
+  width: 7px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: var(--grisito);
+  border-radius: 10px;
+}
+
+/*perfil*/
+
+#titulo {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 5rem;
+  box-shadow: 0px 0px 10px 7px rgba(255, 255, 255, 0.1);
+  display: flex;
+  overflow: hidden;
+  padding: 5px 20px;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/*AGREGAR TAREA*/
+.agregar-juego {
+  background-color: var(--white);
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 6px;
+}
+
+.agregar-juego input {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+input {
+  border: 0.1px solid #a7a7a731;
+  transition: 0.5s;
+  outline: none;
+}
+
+input:hover {
+  border-color: var(--blue);
+}
+
+input:focus-visible {
+  border: 0.1px solid var(--blue);
+}
+
+.i {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.agregar-juego input::placeholder {
+  font-size: 1rem;
+  color: var(--gray);
+}
+
+/*seccion juego*/
+
+.seccion-juego h3 {
+  margin-bottom: 20px;
+}
+
+.seccion-juego li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 4px 0;
+  transition: 0.5s;
+  background-color: white;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-juego li:hover {
+  background-color: var(--grisito);
+}
+
+.seccion-juego > ul p {
+  font-size: 1.2rem;
+}
+
+.line-through {
+  text-decoration: line-through;
+  color: var(--grisito);
+}
+
+.seccion-juego i {
+  font-size: 25px;
+  cursor: pointer;
+}

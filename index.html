@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi proyecto final</title>
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <body>
+    <div id="titulo">
+      <lord-icon
+        src="https://cdn.lordicon.com/svbmmyue.json"
+        trigger="loop"
+        delay="1000"
+        colors="primary:#121331"
+        state="hover"
+        style="width: 30px; height: 30px"
+      >
+      </lord-icon>
+      <h2>Juegos probados o terminados</h2>
+    </div>
+    <main>
+      <div class="container">
+        <div class="seccion-juego">
+          <h3>Lista de juegos</h3>
+          <ul id="lista">
+            
+          </ul>
+        </div>
+        <div class="agregar-juego">
+          <input type="text" id="input" placeholder="  + Agregar nuevo juego" />
+          <lord-icon
+            class="i" id="boton-enter"
+            src="https://cdn.lordicon.com/xdakhdsq.json"
+            trigger="hover"
+          >
+          </lord-icon>
+        </div>
+      </div>
+      <script type="module" src="/main.js"></script>
+    </main>
+  </body>
+</html>

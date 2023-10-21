@@ -1,4 +1,5 @@
 import "./style.css";
+
 const doc = document;
 const lista = doc.querySelector("#lista");
 const elemento = doc.querySelector("#elemento");
@@ -8,8 +9,7 @@ const check = "fa-check-circle";
 const uncheck = "fa-circle";
 const lineThrough = "line-through";
 let id = 0;
-const LIST = [];
-let LIS;
+let LIST = [];
 
 // funcion de agregar juego
 
@@ -30,7 +30,7 @@ function agregarjuego(juego, id, realizado, eliminado) {
 }
 
 //funcion juego realizado
-function juegoRealizado(element) {
+export function juegoRealizado(element) {
   element.classList.toggle(check);
   element.classList.toggle(uncheck);
   element.parentNode.querySelector(".text").classList.toggle(lineThrough);
@@ -38,12 +38,10 @@ function juegoRealizado(element) {
 }
 
 //Funcion eliminar tarea
-function juegoEliminado(element) {
+export function juegoEliminado(element) {
   element.parentNode.parentNode.removeChild(element.parentNode);
-  LIST[element.id].eliminado = true
+  LIST[element.id].eliminado = true;
 }
-
-
 
 botonEnter.addEventListener("click", () => {
   const juego = input.value;

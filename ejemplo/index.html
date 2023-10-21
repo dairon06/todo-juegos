@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>formulario</h1>
+    <form id="datos">
+      <input
+        type="text"
+        name="nombre"
+        id="nombre"
+        placeholder="nombre"
+        required
+      />
+      <input
+        type="text"
+        name="apellido"
+        id="apellido"
+        placeholder="apellido"
+        required
+      />
+      <input type="number" name="edad" id="edad" placeholder="edad" required />
+      <input
+        type="email"
+        name="correo"
+        id="correo"
+        placeholder="correo"
+        required
+      />
+      <input
+        type="number"
+        name="telefono"
+        id="telefono"
+        placeholder="telefono"
+        required
+      />
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="usuarios"></div>
+    <script>
+      const usuarios = document.getElementById("usuarios");
+      const formulario = document.getElementById("datos");
+
+      function crearUsuario(nombre, apellido, edad, correo, telefono) {
+        const usuario = document.createElement("div");
+        usuario.innerHTML = `<p>${nombre} ${apellido} ${edad} ${correo} ${telefono}</p>`;
+        usuarios.appendChild(usuario);
+      }
+
+      formulario.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const { nombre, apellido, edad, correo, telefono } =
+          event.target.elements;
+
+        fetch("http://localhost:3000/usuarios", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nombre: nombre.value,
+            apellido: apellido.value,
+            edad: edad.value,
+            correo: correo.value,
+            telefono: telefono.value,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            crearUsuario(
+              data.nombre,
+              data.apellido,
+              data.edad,
+              data.correo,
+              data.telefono)
+            // limpiar formulario
+            nombre.value = "";
+            apellido.value = "";
+            edad.value = "";
+            correo.value = "";
+            telefono.value = "";
+          })
+          .catch((err) => {
+            alert("error al enviar los datos");
+            console.log(err);
+          });
+      });
+    </script>
+  </body>
+</html>
